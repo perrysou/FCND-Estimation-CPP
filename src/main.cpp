@@ -38,7 +38,7 @@ int randomNumCarry=-1;
 void OnTimer(int v);
 
 vector<QuadcopterHandle> CreateVehicles();
-string _scenarioFile="../config/01_Intro.txt";
+string _scenarioFile="../config/11_GPSUpdate.txt";
 
 #include "MavlinkNode/MavlinkNode.h"
 shared_ptr<MavlinkNode> mlNode;
@@ -55,14 +55,14 @@ int main(int argcp, char **argv)
   grapher.reset(new GraphManager(false));
 
   // re-load last opened scenario
-  FILE *f = fopen("../config/LastScenario.txt", "r");
-  if (f)
-  {
-    char buf[100]; buf[99] = 0;
-    fgets(buf, 99, f);
-    _scenarioFile = SLR::Trim(buf);
-    fclose(f);
-  }
+//  FILE *f = fopen("../config/LastScenario.txt", "r");
+//  if (f)
+//  {
+//    char buf[100]; buf[99] = 0;
+//    fgets(buf, 99, f);
+//    _scenarioFile = SLR::Trim(buf);
+//    fclose(f);
+//  }
 
   LoadScenario(_scenarioFile);
  
